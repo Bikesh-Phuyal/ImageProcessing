@@ -125,11 +125,13 @@ int main(int argc, char **argv) {
   t4_arguments.start = 3;
   t4_arguments.stride = 4;
   
+  //pthread created function passed to thread	
   pthread_create(&t1, NULL, detector, &t1_arguments);
   pthread_create(&t2, NULL, detector, &t2_arguments);
   pthread_create(&t3, NULL, detector, &t3_arguments);
   pthread_create(&t4, NULL, detector, &t4_arguments);
 
+  //thread joined
   pthread_join(t1, NULL);
   pthread_join(t2, NULL);
   pthread_join(t3, NULL);
